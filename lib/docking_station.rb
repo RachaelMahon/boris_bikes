@@ -3,9 +3,12 @@ class DockingStation
   attr_reader :station
 
 
-
   def release_bike
-    Bike.new
+    if bike == 0
+    raise 'No bikes'
+    else
+      @bike
+    end
   end
 
   def dock(bike)
@@ -22,31 +25,10 @@ attr_reader :bike #this is a shorthand one line syntax for writing a method belo
 end
 
 
-
-
 class Bike
 
- def is_working?
-   true
- end
+   def is_working?
+     true
+   end
 
 end
-
-=begin
-
-class Customer
-  def return
-    if DockingStation.empty?
-      nil
-    elsif !DockingStation.empty?
-
-    end
-  end
-
-end
-
-class
-
-=end
-
-#check to commit
