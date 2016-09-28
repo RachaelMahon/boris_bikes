@@ -1,34 +1,30 @@
 class DockingStation
 
   attr_reader :station
-  def initialize()
-    @station = station
-  end
 
 
 
   def release_bike
+    Bike.new
   end
 
-  def dock_bike
+  def dock(bike)
+    @bike = bike
   end
 
-  def return_bike
-  end
+attr_reader :bike #this is a shorthand one line syntax for writing a method below
 
-  def has_bike?
-    @station.empty?
-  end
+#  def bike
+#    @bike
+#  end
+
 
 end
 
 
-class Bike
 
-  attr_reader :bike
-  def initialize()
-    @bike = bike
-  end
+
+class Bike
 
  def is_working?
    true
