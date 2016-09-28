@@ -1,21 +1,18 @@
 class DockingStation
 
   attr_reader :station
-
+  attr_reader :bike
 
   def release_bike
-    if bike == 0
-    raise 'No bikes'
-    else
+    fail 'No bikes' unless @bike
       @bike
     end
-  end
 
   def dock(bike)
     @bike = bike
   end
 
-attr_reader :bike #this is a shorthand one line syntax for writing a method below
+#this is a shorthand one line syntax for writing a method below
 
 #  def bike
 #    @bike

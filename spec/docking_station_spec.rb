@@ -6,10 +6,21 @@ describe DockingStation do
     it { is_expected.to respond_to(:dock).with(1).argument}
     it { is_expected.to respond_to(:bike)}
 
-   it "expect error for bike release" do
-     expect { raise StandardError, 'No bikes' }.
-     to raise_error('No bikes')
-   end
+describe '#release_bike' do
+  it 'raises an error when there are no bikes available' do
+    docking_station = DockingStation.new
+      expect{docking_station.release_bike}.to raise_error('No bikes')
+    end
+  end
+
+
+
+
+
+  # it "expect error for bike release" do
+  #   expect { raise StandardError, 'No bikes' }.
+  #   to raise_error('No bikes')
+   #end
 
     it 'docks something' do
       bike = Bike.new
