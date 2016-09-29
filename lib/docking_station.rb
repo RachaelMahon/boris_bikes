@@ -9,7 +9,9 @@ class DockingStation
     end
 
   def dock(bike)
-    fail 'Docking station full' unless station != bike
+    if @bike
+      fail 'Docking station full'
+    end
     @bike = bike
   end
 
