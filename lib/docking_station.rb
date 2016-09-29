@@ -1,24 +1,20 @@
 class DockingStation
 
-  attr_reader :station
-  attr_reader :bike
+  attr_reader :bikes
 
-  def release_bike
-    fail 'No bikes' unless @bike
-      @bike
-    end
-
-  def dock(bike)
-    fail 'Docking station full' if @bike
-    @bike = bike
+  def initialize
+    @bikes = []
   end
 
-#this is a shorthand one line syntax for writing a method below
+  def release_bike
+    fail 'No bikes' if @bikes.count == 0
+    @bikes
+  end
 
-#  def bike
-#    @bike
-#  end
-
+  def dock(bike)
+    fail 'Docking station full' if @bikes.count >= 20
+    @bikes << bike
+  end
 
 end
 
