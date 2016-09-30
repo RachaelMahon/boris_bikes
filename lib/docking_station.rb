@@ -20,6 +20,9 @@ attr_reader :capacity
     @bikes << bike
   end
 
+  def count_bikes #this seems to have worked! Try this on irb!
+    @bikes.count
+  end
 private
 
 
