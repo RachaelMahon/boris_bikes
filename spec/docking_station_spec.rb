@@ -12,7 +12,7 @@ describe DockingStation do
 
   it "working? method works on bike" do
     bike = Bike.new
-    expect(bike).to respond_to :is_working?
+    expect(bike).to respond_to :working
   end
 
   it "release_bike raises an error if there are no bikes" do
@@ -32,6 +32,17 @@ describe DockingStation do
 
   it "capacity is equal to argument given" do
     docking_station_capacity = DockingStation.new(5)
-    expect(docking_station_capacity.capacity).to eq 5 
+    expect(docking_station_capacity.capacity).to eq 5
   end
+
+  it "report of working status of the bike when working" do
+    bike_working = Bike.new
+    expect(subject.dock(bike_working)).to eq "Working bike"
+  end
+
+  it "report of working status of the bike when broken" do
+    bike_broken = Bike.new(false)
+    expect(subject.dock(bike_broken)).to eq "Broken bike"
+  end
+
 end

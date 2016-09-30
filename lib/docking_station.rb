@@ -20,6 +20,11 @@ attr_reader :capacity
   def dock(bike)
     fail 'Docking station full' if full?
     @bikes << bike
+    if bike.working == true
+      "Working bike"
+    elsif bike.working == false
+      "Broken bike"
+    end
   end
 
   def count_bikes #this seems to have worked! Try this on irb!
