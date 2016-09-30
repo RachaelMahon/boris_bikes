@@ -1,3 +1,5 @@
+require_relative 'bike.rb'
+
 class DockingStation
 
   DEFAULT_CAPACITY = 20
@@ -23,6 +25,7 @@ attr_reader :capacity
   def count_bikes #this seems to have worked! Try this on irb!
     @bikes.count
   end
+
 private
 
 
