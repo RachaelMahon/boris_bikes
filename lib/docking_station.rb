@@ -37,12 +37,6 @@ private
   end
 end
 
-class Bike
-
-   def is_working?
-     true
-   end
-end
 
 # This is a git pong test.
 #test part
